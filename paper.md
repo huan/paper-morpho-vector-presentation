@@ -1,28 +1,29 @@
 ---
-title: "A Thought of Morpheme Vector Representation"
-date: 2018-09-30 00:00:00 +0800
-comments: true
-mathjax: true
-categories:
-  - paper
+title: "A Review of Word Embedding Based on Morpheme Vector Representation"
+subtitle: 'With pandoc and a very long bash command'
+author:
+- name: Huan LI (李卓桓)
+  email: huan@bupt.edu.cn
+  affiliation: CAD Center, Department of Computer Science and Technology, Beijing University of Post and Telecom, China  
+- name: Author Two
+  email: some@some.com
+  affiliation: University of Nowhere
 tags:
-  - morpheme
-  - phoneme
-  - overview
+- nothing
+- nothingness
+abstract: How words are put together out of smaller pieces that linguists call morphemes, the minimal units of linguistic form and meaning. ①从事这一研究的目的和重要性; 　②研究的主要内容，指明完成了哪些工作; 　③获得的基本结论和研究成果，突出论文的新见解; 　④结论或结果的意义。
+
+date: Sep 30, 2018
+
+
+CJKmainfont: STSong
+CJKoptions: BoldFont=STHeiti,ItalicFont=STKaiti
+
+CJKsansfont: STXihei
+CJKsansoptions: BoldFont=STHeiti
+
+CJKmonofont: STFangsong
 ---
-
-> Huan LI(李卓桓), Ph.D.  
-> CAD Center, Department of Computer Science and Technology  
-> Beijing University of Post and Telecom, 100876, China  
-> huan@bupt.edu.cn  
-
-## Abstract
-
-How words are put together out of smaller pieces that linguists call morphemes, the minimal units of linguistic form and meaning.
-
-①从事这一研究的目的和重要性; 　②研究的主要内容，指明完成了哪些工作; 　③获得的基本结论和研究成果，突出论文的新见解; 　④结论或结果的意义。
-
-<!--more-->
 
 ## 1 Introduction
 
@@ -277,3 +278,4 @@ https://zhuanlan.zhihu.com/p/32688983
 1. [“后 Word Embedding ”的热点会在哪里？](http://yanran.li/peppypapers/2015/08/17/post-word-embedding.html)
 1. [论文阅读笔记 Improved Word Representation Learning with Sememes](https://www.cnblogs.com/fengyubo/p/9038190.html)
 1. [BETTER WORD REPRESENTATIONS WITH RECURSIVE NEURAL NETWORKS FOR MORPHOLOGY](https://pdfs.semanticscholar.org/cd3a/b4a3536da969297db446eaf8795fef62c8a6.pdf) (slide)
+1. [Word embeddings in 2017: Trends and future directions](http://ruder.io/word-embeddings-2017/)
