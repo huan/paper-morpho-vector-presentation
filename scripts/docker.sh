@@ -14,6 +14,5 @@ set -e
 
 docker run -it --rm \
   -v $PWD:/doc \
-  -v $PWD/docker/msttcorefonts:/usr/share/fonts/external \
-  samurais/texlive:1.0.0 \
+  thomasweise/texlive \
   bash

@@ -1,17 +1,14 @@
 ---
-title: "A Review of Word Embedding Based on Morpheme Vector Representation"
-subtitle: 'With pandoc and a very long bash command'
-author:
-- name: Huan LI (李卓桓)
-  email: huan@bupt.edu.cn
-  affiliation: CAD Center, Department of Computer Science and Technology, Beijing University of Post and Telecom, China  
-- name: Author Two
-  email: some@some.com
-  affiliation: University of Nowhere
-tags:
-- nothing
-- nothingness
-abstract: How words are put together out of smaller pieces that linguists call morphemes, the minimal units of linguistic form and meaning. ①从事这一研究的目的和重要性; 　②研究的主要内容，指明完成了哪些工作; 　③获得的基本结论和研究成果，突出论文的新见解; 　④结论或结果的意义。
+title: A Review of Word Embedding Based on Morpheme Vector Representation
+subtitle: With pandoc and a very long bash command
+author: 
+- Huan LI (李卓桓) huan@bupt.edu.cn 
+- author 22222222
+institute: 
+- Department of Computer Science and Technology
+- Beijing University of Post and Telecom
+abstract: |
+  How words are put together out of smaller pieces that linguists call morphemes, the minimal units of linguistic form and meaning. ①从事这一研究的目的和重要性; 　②研究的主要内容，指明完成了哪些工作; 　③获得的基本结论和研究成果，突出论文的新见解; 　④结论或结果的意义。
 
 date: Sep 30, 2018
 
@@ -151,6 +148,30 @@ The 3D relation information was perfectly included.
 
 ![](https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/00a28138c74869cfb8236a18a4dbe3a896f7a812/4-Figure2-1.png)
 > Source: [https://www.semanticscholar.org](https://www.semanticscholar.org/paper/Better-Word-Representations-with-Recursive-Neural-Luong-Socher/00a28138c74869cfb8236a18a4dbe3a896f7a812)
+
+## Test
+
+[Pandoc](https://en.wikipedia.org/wiki/Pandoc) is a great tool for converting between different print formats. In this case pandoc will handle these conversions for us, all in one command:
+
+```
+Markdown -> Latex -> Latex Citeproc Bibliography Filter -> PDF
+```
+
+![This is the caption \label{my_figure}](images/joint-learning-of-character-and-word-embeddings.png)
+
+Non-English or Math|Frequency |Comments          
+-------------------|----------|-----------------
+\O                 |1 in 1,000|For Swedish names 
+$\pi$              |1 in 5    |Common in math    
+\$                 |4 in 5    |Used in business  
+
+Table: (Table title) \label{my_table}
+
+
+See Table \ref{my_table} for more.
+
+See Figure \ref{my_figure} for more.
+
 
 ## Tasks
 
