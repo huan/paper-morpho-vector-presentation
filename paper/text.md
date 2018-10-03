@@ -1,22 +1,21 @@
 ---
 title: A Review of Word Embedding in Morphonology
-subtitle: With pandoc and a very long bash command
 author:
 - Huan LI (李卓桓) huan@bupt.edu.cn
 institute:
 - Department of Computer Science and Technology
 - Beijing University of Post and Telecom
 abstract: |
-  The text meaning is important for AI, Word Embedding is the basic tool today for text meaning, so the Word Embedding is very important. However, most of the Word Embedding is based on words, like Word2Vec, GLOVE. From the view of Computational Linguistics, words are ruled by syntax, and they are formed by the basic unit of the language: morpheme. Morpheme is the smallest meaningful morphological unit of a language that cannot be further divided or analyzed. In other words, morpheme can be describe as the minimal units of meaning. In this paper, we believe that the morpheme could help AI understand the text meaing better, and reviewed some Word Embedding technology with Morphonology, which incorporating morphological information into Word Embedding.
+  The text meaning is essential for AI; Word Embedding is the primary tool today for text meaning, so the Word Embedding is very important. However, most of the Word Embedding is based on words, like Word2Vec, GLOVE. From the view of Computational Linguistics, words are ruled by syntax, and they are formed by the basic unit of the language: morpheme. A morpheme is the smallest meaningful morphological unit of a language that cannot be further divided or analyzed. In other words, morpheme can be described as the minimal units of meaning. In this paper, we believe that the morpheme could help AI understand the text meaning better, and reviewed some Word Embedding technology with Morphonology, which incorporating morphological information into Word Embedding.
 
 date: Sep 30, 2018
 ---
 
 ## 1 Introduction
 
-Morphology is a study of words. It basically deals with word formation, examines the relationship between words, and analyzes their constituent elements.
+Morphology is a study of words. It mainly deals with word formation, examines the relationship between words, and analyzes their constituent elements.
 
-Morpheme is the smallest unit of a word, which has a meaning, lexical or grammatical, and cannot be divided into smaller units. For instance, the word "unpredictable" consists of 3 morphemes -- un + predict + able. Un is a prefix, which means "not" and is used in this example to negate the adjective "predictable." The suffix able is used to form adjectives and is usually placed at the end of a verb (useable, loveable, deniable, etc.).
+A morpheme is the smallest unit of a word, which has a meaning, lexical or grammatical, and cannot be divided into smaller units. For instance, the word "unpredictable" consists of 3 morphemes -- un + predict + able. Un is a prefix, which means "not" and is used in this example to negate the adjective "predictable." The suffix able is used to form adjectives and is usually placed at the end of a verb (useable, loveable, deniable, etc.).
 
 In this paper, we will talk about the Word Embedding in Morphonology.
 
@@ -46,7 +45,7 @@ And it is powerful. See Table \ref{study-of-word-structure} [@penny2011linguisti
 
 Table: (Study of Word Structure) \label {study-of-word-structure}
 
-Those morphonology knowledges will also help human to understand the words a lot. As there a book namd 《GRE词汇精选》（GRE红宝书） which is known by all the Chinese students who want to pass the GRE test, it gives a lot of morphological tricks like Table \ref{gre-book}:
+That morphonology knowledge will also help human to understand the words a lot. There has a famous book named 《GRE词汇精选》（GRE红宝书） which is known by all the Chinese students who want to pass the GRE test, and it gives a lot of morphological tricks like Table \ref{gre-book}:
 
 | Word | Morphemes / Meaning |
 | ---- | --------- |
@@ -58,29 +57,29 @@ Those morphonology knowledges will also help human to understand the words a lot
 
 Table: (GRE Book) \label {gre-book}
 
-Those knowledge of the common prefixes would also help us in deciding the meaning of new words that we encounter.
+That knowledge of the common prefixes would also help us in deciding the meaning of new words that we encounter.
 
 ## 3 Word Vector Presentations
 
-When doing NLP(Natual Language Processing) with DNN(Deep Neural Network), we need to input the language to the computer. There's many technics can do this, such as One Hot Encoding for Character, or Vector Representing for Word.
+When doing NLP(Natual Language Processing) with DNN(Deep Neural Network), we need to input the language to the computer. There are many technics can do this, such as One Hot Encoding for Character, or Vector Representing for Word.
 
 The Vector Representing for Word is a very active field since Word2Vec [@mikolov2013distributed] from Google, GLOVE [@pennington2014glove] from Stanford, and FastText [@niu2017improved] from Facebook, etc.
 
-Most algorithms are derivative of Word2Vec: they map words in training set into vectors. However, this method has many limitions, the biggest one is that it has a closed vocabulary assumption, so that if a worda had not been seen at training, then it could not be understood, this is a OOV(Out of Vocabulary) problem.
+Most algorithms are derivative of Word2Vec: they map words in the training set into vectors. However, this method has many limitations, and the biggest one is that it has a closed vocabulary assumption, so that if a word had not been seen at training, then it could not be understood, this is an OOV(Out of Vocabulary) problem.
 
-FastText has some breakthoughs, it considers each word as a Bag of Character n-grams. This is also called as a Subword-Units in the paper. Instead of dealing of individual words, FastText breaks words into several n-grams (Subword-Units). For instance, the tri-grams for the word `orange` is `ora`, `ran`, `ang`, `nge`. The word embedding vector for `orange` will be the sum of all these n-grams. 
+FastText has some breakthroughs. It considers each word as a Bag of Character n-grams. This is also called as a Subword-Units in the paper. Instead of dealing of individual words, FastText breaks words into several n-grams (Subword-Units). For instance, the tri-grams for the word `orange` is `ora`, `ran`, `ang`, `nge`. The word embedding vector for `orange` will be the sum of all these n-grams. 
 
-Subword-Units will be helpful when we meet a OOV word, like rare and complex words, because we can analysing it from the characters. 
+Subword-Units will be helpful when we meet an OOV word, like rare and complicated words, because we can analyze it from the characters. 
 
-However, the naive Subword-Units had included the linguistics morphological structure for words. The n-gram algrithm will produce too much combinations, which most of them would be meaningless. See Figure \ref{subword-regularization} [@kudo2018subword]
+However, the naive Subword-Units had included the morphological linguistics structure for words. The n-gram algorithm will produce too many combinations, which most of them would be meaningless. See Figure \ref{subword-regularization} [@kudo2018subword]
 
 ![Subword Regularization \label{subword-regularization}](images/subword-regularization-improving-neural-network-translation-models-with-multiple-subword-candidates.png)
 
-By introducing morphological knowledges, we can split the word into morphemes, which could help us to build representations for morphologically complex words from Subword-units of morphemes. Using Morph-Subword-Units build from morphemes will get better word representation. See Figure \ref{uncomfortable-morphology-tree} [@clair2009scared]
+By introducing morphological knowledge, we can split the word into morphemes, which could help us to build representations for morphologically complex words from Subword-units of morphemes. Using Morph-Subword-Units build from morphemes will get better word representation. See Figure \ref{uncomfortable-morphology-tree} [@clair2009scared]
 
-![Morpheme-based morphology tree of the word "uncomfortable"\label{uncomfortable-morphology-tree}](images/uncomfortable-morphology-tree.png)
+![Morphology Tree\label{uncomfortable-morphology-tree}](images/uncomfortable-morphology-tree.png)
 
-The languages other than English, such as Chinese, Japaness, and Korea, also have their own word in different morphology. Those languages could use the same idea to presente the smallest meaningful morphological unit of the language, for example, Chinese character components. See Figure \ref{component-enhanced-hinese-character-embeddings} [@li2015component].
+The languages other than English, such as Chinese, Japanese, and Korea, also have their word in different morphology. Those languages could use the same idea to present the smallest meaningful morphological unit of the language, for example, Chinese character components. See Figure \ref{component-enhanced-hinese-character-embeddings} [@li2015component].
 
 ![Chinese Character Component \label{component-enhanced-hinese-character-embeddings}](images/component-enhanced-chinese-character-embeddings.png)
 
@@ -88,11 +87,11 @@ Besides the character components, there's also some researchers go deeper with s
 
 ![Chinese Word Embeddings with N-Gram \label{chinese-word-n-gram}](images/cw2vec-learning-chinese-word-embeddings-with-stroke-n-gram-information.png)
 
-And get the sememe for the component of the Chinese characters from HowNet [@dong2003hownet]. See Figure \ref{character-and-word-embedding} [@niu2017improved]
+Moreover, get the sememe for the component of the Chinese characters from HowNet [@dong2003hownet]. See Figure \ref{character-and-word-embedding} [@niu2017improved]
 
 ![Chinese Word with Sememe \label{character-and-word-embedding}](images/joint-learning-of-character-and-word-embeddings.png)
 
-Today, there's many Subword-Units algorithm that want to improve the performance for the language model, like Morfessor, BPE, char-trigram, character, and analysis. See Figure \ref{do-we-capture-morphology} [@vania2017characters]
+Today, many Subword-Units algorithms want to improve the performance of the language model, like Morfessor, BPE, char-trigram, character, and analysis. See Figure \ref{do-we-capture-morphology} [@vania2017characters]
 
 ![From Characters to Words to in Between \label{do-we-capture-morphology}](images/from-characters-to-words-to-in-between-do-we-capture-morphology.png)
 
@@ -103,30 +102,30 @@ There has already a lot researchs like "implicitly incorporating morphological i
 ![Morphological Sub Words\label{representations-with-morphology}](images/better-word-representations-with-recursive-neural-networks-for-morphology.png)
 
 
-At last, those prior knowledge of morphological is valuable. But how can we get the morphological knowledges? Of couse we can get them from the priory researchers. But it could be better if we could induct the morphology knowledge from unsupervised machine learning alghorithm. See Figure \ref{unsupervised-morphology-induction} [@soricut2015unsupervised]
+At last, that prior knowledge of morphological is valuable. However, how can we get the morphological knowledge? Of course, we can get them from the priory researchers. However, it could be better if we could induct the morphology knowledge from unsupervised machine learning algorithms. See Figure \ref{unsupervised-morphology-induction} [@soricut2015unsupervised]
 
 ![Unsupervised Morphology Induction\label{unsupervised-morphology-induction}](images/unsupervised-morphology-induction-using-word-mbeddings.png)
 
 ## Conclusion and Future Work
 
-Morphonology knowledge is very valuable and it could be able to help the word embedding be more informative. 
-There's already lots of word embedding research based on the morpheme, but it seems they are all very eary stage, and there stil haven't a solution for the industry like Word2Vec or GLOVE.
+Morphonology knowledge is, and it could be able to help the word embedding to be more informative. 
+There's already lots of word embedding research based on the morpheme, but it seems they are all very early stage, and there still have not a solution for the industry like Word2Vec or GLOVE.
 
-I believe this direction is a right direction to improve the performance of tradional word embedding for NLP tasks, it's worth to do more research based on the previous studies.
+We believe this direction is a right direction to improve the performance of traditional word embedding for NLP tasks, and it is worth to do more research based on the previous studies.
 
 The future work would consider to:
 
 1. Train a Tokenizer to parse Word to Morphemes
 1. Train Morpheme Embedding on Wikipedia Dataset
 1. Use GRU to convert Morpheme Embeddings for each word to Word Embedding(Morpheme Word Embedding)
-1. Benchmark all the morpheme based word embedding algorithms
+1. Benchmark all the morpheme-based word embedding algorithms
 1. Compare the results of standard NLP tasks on Morpheme Word Embedding against to other traditional word embeddings.
 
 ## Acknowledgements
 
-I'd like to thank professor Xiaojie LI for I started thinking about embedding in morphology when I'm on the class Computational Linguistics that he taught.
+I would like to thank professor Xiaojie LI for I started thinking about embedding in morphology when I am on the class Computational Linguistics that he taught.
 
-I'd also like to thank my friend Tongjun LI, who is the orginazer of Wechat group "NLP Fans" with hundreds of members, where I could discuss my idea over there.
+I'd also like to thank my friend Tongjun LI, who is the organizer of Wechat group "NLP Fans" with hundreds of members, where I could discuss my idea over there.
 
 ## See Also
 
