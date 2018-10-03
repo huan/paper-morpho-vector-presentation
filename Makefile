@@ -41,3 +41,7 @@ build: pdf html
 .PHONY: watch
 watch:
 	nodemon --watch paper/ --ext '*' --exec 'make pdf'
+
+.PHONY: install
+install:
+	ln -sf ../images paper/images

@@ -25,7 +25,7 @@ pandoc \
   --metadata-file=paper/metadata.yaml \
   \
   --filter=latex/longtable-filter.py \
-  --include-in-header=latex/booktabs.tex \
+  -V tables \
   \
   -s paper/text.md \
   -o dist/paper.$1

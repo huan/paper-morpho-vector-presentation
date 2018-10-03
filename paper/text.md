@@ -48,13 +48,13 @@ Table: (Study of Word Structure) \label {study-of-word-structure}
 
 Those morphonology knowledges will also help human to understand the words a lot. As there a book namd 《GRE词汇精选》（GRE红宝书） which is known by all the Chinese students who want to pass the GRE test, it gives a lot of morphological tricks like Table \ref{gre-book}:
 
-| Word | Chinese Meaning | Morphemes |
-| ---- | --------------- | --------- |
-| abandon | v./n.放弃；放纵 | a+band(乐队)+on→一个乐队在演出→放纵 |
-| abash | v.使害羞，使尴尬 | ab+ash(灰)→中间有灰，灰头灰脸→尴尬 |
-| abate | v.减轻，减少 | a(加强)+bate(减弱，减少)→减轻 |
-| abbreviate | v.缩短；缩写 | ab(加强)+brev(短)+iate→缩短 |
-| abdicate | v.退位，辞职，放弃 | ab(相反)+dic(说话，命令)+ate→不再命令→退位，辞职 |
+| Word | Morphemes / Meaning |
+| ---- | --------- |
+| abandon | a+band(乐队)+on→一个乐队在演出→放纵 |
+| abash | ab+ash(灰)→中间有灰，灰头灰脸→尴尬 |
+| abate | a(加强)+bate(减弱，减少)→减轻 |
+| abbreviate | ab(加强)+brev(短)+iate→缩短 |
+| abdicate | ab(相反)+dic(说话，命令)+ate<br />→不再命令→退位，辞职 |
 
 Table: (GRE Book) \label {gre-book}
 

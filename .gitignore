@@ -149,3 +149,4 @@ _build
 *.pyc
 
 tex2pdf.*/
+paper/images
