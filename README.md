@@ -2,6 +2,8 @@
 
 A Thought of  Morphonological Vector Representation in Linguistic
 
+name as textmeme? meme2vec?
+
 ## INSTALL
 
 ```shell

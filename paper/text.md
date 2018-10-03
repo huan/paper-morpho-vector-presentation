@@ -7,12 +7,60 @@ institute:
 - Department of Computer Science and Technology
 - Beijing University of Post and Telecom
 abstract: |
-  How words are put together out of smaller pieces that linguists call morphemes, the minimal units of linguistic form and meaning. ①从事这一研究的目的和重要性; 　②研究的主要内容，指明完成了哪些工作; 　③获得的基本结论和研究成果，突出论文的新见解; 　④结论或结果的意义。
+  The text meaning is important for AI, Word Embedding is the basic tool today for text meaning, so the Word Embedding is very important. However, most of the Word Embedding is based on words, like Word2Vec, GLOVE. From the view of Computational Linguistics, words are ruled by syntax, and they are formed by the basic unit of the language: morpheme. Morpheme is the smallest meaningful morphological unit of a language that cannot be further divided or analyzed. In other words, morpheme can be describe as the minimal units of meaning. In this paper, we believe that the morpheme could help AI understand the text meaing better, and reviewed some Word Embedding technology with Morphonology, which incorporating morphological information into Word Embedding.
 
 date: Sep 30, 2018
 ---
 
 ## 1 Introduction
+
+Morphology is a study of words. It basically deals with word formation, examines the relationship between words, and analyzes their constituent elements.
+
+Morpheme is the smallest unit of a word, which has a meaning, lexical or grammatical, and cannot be divided into smaller units. For instance, the word "unpredictable" consists of 3 morphemes -- un + predict + able. Un is a prefix, which means "not" and is used in this example to negate the adjective "predictable." The suffix able is used to form adjectives and is usually placed at the end of a verb (useable, loveable, deniable, etc.).
+
+In this paper, we will talk about the Word Embedding in Morphonology.
+
+## 2. Morphonology
+
+morphemes is Re-combin(e)-able. See Table \ref{morpheme-carries-meaning} [@jill2016morphology]:
+
+Affix  | Morpheme  | Meaning
+-------|-----------|-------------------
+Prefix | "re-"     | "again"
+Suffix | "-able"   | "capable of"
+Stem   | "combine" | "to join"
+
+Table: (Morpheme Carries Meaning) \label{morpheme-carries-meaning}
+
+And it is powerful. See Table \ref{study-of-word-structure} [@penny2011linguistics]
+
+| Word Structure |
+|----------------|
+| pre+pose |
+| pre+pos+ition |
+| pre+pos+ition+al |
+| pre+pos+ition+al+ize |
+| pre+pos+ition+al+iz+ation |
+| pre+pos+ition+al+iz+ation+free |
+| Pseudopseudohypoparathyroidism |
+
+Table: (Study of Word Structure) \label {study-of-word-structure}
+
+Those morphonology knowledges will also help human to understand the words a lot. As there a book namd 《GRE词汇精选》（GRE红宝书） which is known by all the Chinese students who want to pass the GRE test, it gives a lot of morphological tricks like Table \ref{gre-book}:
+
+| Word | Chinese Meaning | Morphemes |
+| ---- | --------------- | --------- |
+| abandon | v./n.放弃；放纵 | a+band(乐队)+on→一个乐队在演出→放纵 |
+| abash | v.使害羞，使尴尬 | ab+ash(灰)→中间有灰，灰头灰脸→尴尬 |
+| abate | v.减轻，减少 | a(加强)+bate(减弱，减少)→减轻 |
+| abbreviate | v.缩短；缩写 | ab(加强)+brev(短)+iate→缩短 |
+| abdicate | v.退位，辞职，放弃 | ab(相反)+dic(说话，命令)+ate→不再命令→退位，辞职 |
+
+Table: (GRE Book) \label {gre-book}
+
+Those knowledge of the common prefixes would also help us in deciding the meaning of new words that we encounter.
+
+## 3 Word Vector Presentations
 
 When doing NLP(Natual Language Processing) with DNN(Deep Neural Network), we need to input the language to the computer. There's many technics can do this, such as One Hot Encoding for Character, or Vector Representing for Word.
 
@@ -48,130 +96,16 @@ Today, there's many Subword-Units algorithm that want to improve the performance
 
 ![From Characters to Words to in Between \label{do-we-capture-morphology}](images/from-characters-to-words-to-in-between-do-we-capture-morphology.png)
 
-
-Obviously, those prior knowledge of morphological is valuable. But how can we get the morphological knowledges? Of couse we can get them from the priory researchers. But it could be better if we could induct the morphology knowledge from unsupervised machine learning alghorithm. See Figure \ref{unsupervised-morphology-induction} [@soricut2015unsupervised]
-
-![Unsupervised Morphology Induction\label{unsupervised-morphology-induction}](images/unsupervised-morphology-induction-using-word-mbeddings.png)
-
-At last, there has already a lot researchs like "implicitly incorporating morphological information into Word Embedding" [@xu2017implicitly], See Figure \ref{morphological-information-into-word-embedding}, and "Better Word Representations with Recursive Neural Networks for Morphology" [luong2013better], See Figure \ref{representations-with-morphology} [@luong2013better].
+There has already a lot researchs like "implicitly incorporating morphological information into Word Embedding" [@xu2017implicitly], See Figure \ref{morphological-information-into-word-embedding}, and "Better Word Representations with Recursive Neural Networks for Morphology" [luong2013better], See Figure \ref{representations-with-morphology} [@luong2013better].
 
 ![Morphological Information into Word Embedding \label{morphological-information-into-word-embedding}](images/implicitly-incorporating-morphological-information-into-word-embedding.png)
 
 ![Morphological Sub Words\label{representations-with-morphology}](images/better-word-representations-with-recursive-neural-networks-for-morphology.png)
 
 
-## 2. Morpheme
+At last, those prior knowledge of morphological is valuable. But how can we get the morphological knowledges? Of couse we can get them from the priory researchers. But it could be better if we could induct the morphology knowledge from unsupervised machine learning alghorithm. See Figure \ref{unsupervised-morphology-induction} [@soricut2015unsupervised]
 
-Why is text meaning is important for AI?
-
-Morpheme is the smallest meaningful morphological unit of a language that cannot be further divided or analyzed. In other words, morpheme can be describe as the minimal units of meaning.
-
-In NLP, we always use word2vec(google) or glove(stanford)
-
-Morpheme RNN...
-
-引入 Morphology 先验知识
-
-s -> fastext will ignore
-s -> multiple things
-
-ed -> fastext will ignore (with the hyperparameter `smallest ngram[minn]`=3)
-ed -> past V
-
-un -> ignore with fasttext
-un -> not, logical
-
-include the knowledge of Morpheme & phoneme, will reduce the complexity & memory problem of FastText n-gram character model
-
-
-name as textmeme? meme2vec?
-
-#### Morpheme
-
-1. Free Morpheme
-1. Bound Morpheme(Affixex)
-    1. Derivational Morpheme
-        1. Prefix
-        1. Suffix
-    1. Inflectional Morpheme
-        1. Suffix(Do not change word class)
-
-)对于某些新知识领域、新技术，写作时可以追溯该主题的发展过程，适当增加一些基础知识内容，以便读者理解。
-
-（1） 该领域的研究意义。 
-主要包括论据和论证。通过提出问题、分析问题和解决问题，比较各种观点的异同点及其理论根据，从而反映作者的见解
-
-横纵法
-
-主要叙述综述的目的和作用，概述主题的有关概念和定义，简述所选择主题的历史背景、发展过程、现状、争论焦点、应用价值和实践意义，同时还可限定综述的范围．使读者对综述的主题有一个初步的印象。这部分约200～
-
-
-Morphology is the study of word structure that critical to reading skills development.
-
-morphemes is Re-combin(e)-able:
-
-```
-Each "morpheme" carries meaning - "prefix", "stem", "suffix"
-
-1. Prefix `re-` means "again" 
-2. Suffix `-able` means "capable of"
-3. Stem `combine` means "to join"
-```
-> https://www.youtube.com/watch?v=zlkGtu035xc
-
-```
-◮ pre+pose
-◮ pre+pos+ition
-◮ pre+pos+ition+al
-◮ pre+pos+ition+al+ize
-◮ pre+pos+ition+al+iz+ation
-◮ pre+pos+ition+al+iz+ation+free
-◮ Pseudopseudohypoparathyroidism
-```
-> Page 3, https://web.stanford.edu/class/linguist1/Slides/morph1-slides.pdf
-
-
-aforementioned -> a fore mentioned 
-英文词根切词
-
-俞敏洪的GRE红宝书（《GRE词汇精选》）中，会把每一个英文单词拆分成对应的词根，用来辅助记忆，如：
-为每一个重要单词都给出了精炼又贴切的记忆方法，包括词根词缀法、联想记忆法和发音记忆法等。同时又给这些重要单词配以同根词、派生词、形近词和反义词，帮助考生理解和记忆，达到举一反三的效果。
-
-```
-abandon v./n.放弃；放纵 分拆联想：a+band(乐队)+on→一个乐队在演出→放纵
-abash v.使害羞，使尴尬 分拆联想：ab+ash(灰)→中间有灰，灰头灰脸→尴尬
-abate v.减轻，减少 词根记忆：a(加强)+bate(减弱，减少)→减轻
-abbreviate v.缩短；缩写 词根记忆：ab(加强)+brev(短)+iate→缩短
-abdicate v.退位，辞职，放弃 词根记忆：ab(相反)+dic(说话，命令)+ate→不再命令→退位，辞职
-```
-> 《GRE词汇精选》
-
-中文字体偏旁：鲸、鲤、鲶 -> 鲜 -> 地三鲜
-海里能吃的东西都比较鲜
-
-朝鲜：不同的维度语义
-
-
-
-## Morphology Ideas
-
-### The Problem in NLP
-
-1. MNIST -> MLP -> Acurracy: The 2D relation information was lost.
-1. OOV problem
-
-Understanding the meanings of the common prefixes would help us in deciding the meaning of new words that we encounter.
-
-### The Solution
-
-MNIST -> CNN -> Acurracy
-
-The 3D relation information was perfectly included.
-
-### Morpheme
-
-Δ简介主题；Δ主题的重要性；Δ理清首要问题；
-Δ简介各篇（例如A.B.）文章与作者，及不同或互补之处。
+![Unsupervised Morphology Induction\label{unsupervised-morphology-induction}](images/unsupervised-morphology-induction-using-word-mbeddings.png)
 
 ## Test
 
@@ -186,34 +120,6 @@ Table: (Table title) \label{my_table}
 
 
 See Table \ref{my_table} for more.
-
-
-
-## Tasks
-
-1. Building NLP Pipeline with Morpheme RNN
-2. Evaluating Morpheme RNN
-
-1.1 分析A的观点 
-1.2 分析B的理论/观点 
-1.3 比较A与B的理论/观点
-
-2.1 找出A与B的共性 
-2.2 找出A与B的差异性 
-2.3 探讨出一个中心议题
-
-（2） 该领域的研究背景和发展脉络。 
-
-（3） 目前的研究水平、存在问题及可能的原因。 
-
-议题1: 探讨A&B 
-议题2：探讨A&B 
-议题3：探讨A&B
-
-1)历史发展：按时间顺序，简述该主题的来龙去脉，发展概况及各阶段的研究水平。
-(2)现状评述：重点是论述当前国内外的研究现状，着重评述哪些问题已经解决，哪些问题还没有解决，提出可能的解决途径；存在的争论焦点，比较各种观点的异同并作出理论解释，亮明作者的观点；详细介绍有创造性和发展前途的理论和假说，并引出论据，指出可能的发展趋势。
-(3)发展前景预测：通过纵横对比，肯定该主题的研究水平，指出存在的问题，提出可能的发展趋势，指明研究方向，提示研究的捷径。
-
 
 ## Conclusion and Future Work
 

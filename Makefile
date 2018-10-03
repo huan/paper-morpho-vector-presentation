@@ -8,6 +8,7 @@ all: build
 .PHONY: clean
 clean:
 	rm -fr dist/
+	rm -fr tex2pdf.*/
 
 .PHONY: mdlint
 mdlint:
