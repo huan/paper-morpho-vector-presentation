@@ -1,6 +1,6 @@
 # Makefile
 # Author: Huan LI <zixia@zixia.net> git.io/zixia
-SOURCE_GLOB=$(wildcard docs/*.md)
+SOURCE_GLOB=$(wildcard paper/* images/*)
 
 .PHONY: all
 all: build
@@ -9,23 +9,29 @@ all: build
 clean:
 	rm -fr dist/
 
-.PHONY: lint
-lint: mdlint
-
 .PHONY: mdlint
-pylint:
+mdlint:
 	mdlint $(SOURCE_GLOB)
 
 .PHONY: test
-test: lint
+test:
 	echo "test"
 	# false
 	echo "ok"
 
-dist/paper.pdf: paper/text.md
+.PHONY: pdf
+pdf: dist/paper.pdf
+dist/paper.pdf: $(SOURCE_GLOB)
 	./scripts/build.sh pdf
 
-dist/paper.html: paper/text.md
+.PHONY: html
+html: dist/paper.html
+dist/paper.html: $(SOURCE_GLOB)
 	./scripts/build.sh html
 
-build: dist/paper.pdf
+.PHONY: build
+build: pdf html
+
+.PHONY: watch
+watch:
+	nodemon --watch paper/ --ext '*' --exec make

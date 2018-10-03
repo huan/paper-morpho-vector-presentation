@@ -11,9 +11,14 @@ set -e
 pandoc \
   --pdf-engine=xelatex \
   --filter=pandoc-citeproc \
-  --bibliography=paper/citations.bib \
+  \
   --variable=classoption:twocolumn \
   --variable=papersize:a4paper \
+  \
+  --bibliography=paper/citations.bib \
+  --metadata-file=paper/metadata.yaml \
+  \
   -H latex/longtable-redefined-with-two-columns.tex \
+  \
   -s paper/text.md \
   -o dist/paper.$1

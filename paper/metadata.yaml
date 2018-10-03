@@ -1,0 +1,9 @@
+---
+CJKmainfont: STSong
+CJKoptions: BoldFont=STHeiti,ItalicFont=STKaiti
+
+CJKsansfont: STXihei
+CJKsansoptions: BoldFont=STHeiti
+
+CJKmonofont: STFangsong
+---

@@ -1,25 +1,15 @@
 ---
 title: A Review of Word Embedding Based on Morpheme Vector Representation
 subtitle: With pandoc and a very long bash command
-author: 
-- Huan LI (李卓桓) huan@bupt.edu.cn 
-- author 22222222
-institute: 
+author:
+- Huan LI (李卓桓) huan@bupt.edu.cn
+institute:
 - Department of Computer Science and Technology
 - Beijing University of Post and Telecom
 abstract: |
   How words are put together out of smaller pieces that linguists call morphemes, the minimal units of linguistic form and meaning. ①从事这一研究的目的和重要性; 　②研究的主要内容，指明完成了哪些工作; 　③获得的基本结论和研究成果，突出论文的新见解; 　④结论或结果的意义。
 
 date: Sep 30, 2018
-
-
-CJKmainfont: STSong
-CJKoptions: BoldFont=STHeiti,ItalicFont=STKaiti
-
-CJKsansfont: STXihei
-CJKsansoptions: BoldFont=STHeiti
-
-CJKmonofont: STFangsong
 ---
 
 ## 1 Introduction
@@ -41,6 +31,9 @@ By introducing morphological knowledges, we can split the word intoto morphoneme
 How can we get the morphological knowledges? Of couse we can get them from the priorier researchers. But it could be better because we could also induct the morphology knowledge from unsupervised machine learning alghorithm(Radu Soricut, 2015).
 
 The languages other than English, such as Chinese, Japaness, and Korea, they will have their own word in different morphology. Those languages could use the same idea to presente the smallest meaningful morphological unit of the language.
+
+https://allennlp.org/elmo
+Deep contextualized word representations
 
 For example, the Chinese could etiher be presented from the charactor by Component-Enhanced Chinese Character Embeddings(Yanran Li, 2015), or 
 
@@ -211,9 +204,9 @@ See Figure \ref{my_figure} for more.
 
 ## Acknowledgements
 
-Frist I'd like to thank Xiaojie LI because I started to think about morphology when I'm on his class: Computational Linguistics.
+Frist I'd like to thank Xiaojie LI because I started to think about morphology when I'm on his class: Computation and Language.
 
-Second, I'd like to thank Tongjun LI, who is the orginazer of the Wechat group "NLP Discussions", so I could discuss my idea with other members in the group.
+Second, I'd like to thank Tongjun LI, who is the orginazer of Wechat group "NLP Fans", so I could discuss my idea with hundreds of other members in the group.
 
 ### 二级标题
 

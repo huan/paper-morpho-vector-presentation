@@ -137,9 +137,8 @@ sympy-plots-for-*.tex/
 *.sav
 
 main.pdf
-dist/*.pdf
+dist/
 _build
-dist/main.ptc
 .tmp
 *.swp
 
@@ -148,3 +147,4 @@ dist/main.ptc
 ~$*.docx
 ~$*.pptx
 *.pyc
+
