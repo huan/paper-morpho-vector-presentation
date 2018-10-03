@@ -148,3 +148,4 @@ _build
 ~$*.pptx
 *.pyc
 
+tex2pdf.*/

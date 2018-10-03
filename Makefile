@@ -34,4 +34,4 @@ build: pdf html
 
 .PHONY: watch
 watch:
-	nodemon --watch paper/ --ext '*' --exec make
+	nodemon --watch paper/ --ext '*' --exec 'make pdf'

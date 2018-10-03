@@ -1,5 +1,5 @@
 ---
-title: A Review of Word Embedding Based on Morpheme Vector Representation
+title: A Review of Word Embedding in Morphonology
 subtitle: With pandoc and a very long bash command
 author:
 - Huan LI (李卓桓) huan@bupt.edu.cn
@@ -16,32 +16,49 @@ date: Sep 30, 2018
 
 When doing NLP(Natual Language Processing) with DNN(Deep Neural Network), we need to input the language to the computer. There's many technics can do this, such as One Hot Encoding for Character, or Vector Representing for Word.
 
-The Vector Representing for Word is a very active field since Word2Vec(Tomas Mikolov, 2013) from Google, GLOVE(Jeffrey, 2014) from Stanford, and FastText(Piotr Bojanowski, 2016) from Facebook, etc.
+The Vector Representing for Word is a very active field since Word2Vec [@mikolov2013distributed] from Google, GLOVE [@pennington2014glove] from Stanford, and FastText [@niu2017improved] from Facebook, etc.
 
 Most algorithms are derivative of Word2Vec: they map words in training set into vectors. However, this method has many limitions, the biggest one is that it has a closed vocabulary assumption, so that if a worda had not been seen at training, then it could not be understood, this is a OOV(Out of Vocabulary) problem.
 
-FastText has some breakthoughs, it considers each word as a Bag of Character n-grams. This is also called as a Sub-Words Units in the paper. Instead of dealing of individual words, FastText breaks words into several n-grams (Sub-Words Units). For instance, the tri-grams for the word `orange` is `ora`, `ran`, `ang`, `nge`. The word embedding vector for `orange` will be the sum of all these n-grams. 
+FastText has some breakthoughs, it considers each word as a Bag of Character n-grams. This is also called as a Subword-Units in the paper. Instead of dealing of individual words, FastText breaks words into several n-grams (Subword-Units). For instance, the tri-grams for the word `orange` is `ora`, `ran`, `ang`, `nge`. The word embedding vector for `orange` will be the sum of all these n-grams. 
 
-Sub-Words Units will be helpful when we meet a OOV word, like rare and complex words, because we can analysing it from the characters. 
+Subword-Units will be helpful when we meet a OOV word, like rare and complex words, because we can analysing it from the characters. 
 
-However, neither the Word2Vec nor the FastText had included the morphological structure of each word. The n-gram Sub-Word Units algrithm will produce too much combinations, which most of them would be meaningless. 
+However, the naive Subword-Units had included the linguistics morphological structure for words. The n-gram algrithm will produce too much combinations, which most of them would be meaningless. See Figure \ref{subword-regularization} [@kudo2018subword]
 
-By introducing morphological knowledges, we can split the word intoto morphonemes, which could help us to build representations for morphologically complex words from their morphemes. Using Sub-Words Units build from morphemes will get better word representation(Minh-Thang Luong, 2013).
+![Subword Regularization \label{subword-regularization}](images/subword-regularization-improving-neural-network-translation-models-with-multiple-subword-candidates.png)
 
-How can we get the morphological knowledges? Of couse we can get them from the priorier researchers. But it could be better because we could also induct the morphology knowledge from unsupervised machine learning alghorithm(Radu Soricut, 2015).
+By introducing morphological knowledges, we can split the word into morphemes, which could help us to build representations for morphologically complex words from Subword-units of morphemes. Using Morph-Subword-Units build from morphemes will get better word representation. See Figure \ref{uncomfortable-morphology-tree} [@clair2009scared]
 
-The languages other than English, such as Chinese, Japaness, and Korea, they will have their own word in different morphology. Those languages could use the same idea to presente the smallest meaningful morphological unit of the language.
+![Morpheme-based morphology tree of the word "uncomfortable"\label{uncomfortable-morphology-tree}](images/uncomfortable-morphology-tree.png)
 
-https://allennlp.org/elmo
-Deep contextualized word representations
+The languages other than English, such as Chinese, Japaness, and Korea, also have their own word in different morphology. Those languages could use the same idea to presente the smallest meaningful morphological unit of the language, for example, Chinese character components. See Figure \ref{component-enhanced-hinese-character-embeddings} [@li2015component].
 
-For example, the Chinese could etiher be presented from the charactor by Component-Enhanced Chinese Character Embeddings(Yanran Li, 2015), or 
+![Chinese Character Component \label{component-enhanced-hinese-character-embeddings}](images/component-enhanced-chinese-character-embeddings.png)
 
-1. Yanran Li et al., . In Computer Science, 2015.
-1. Xinxiong Chen et al., Joint Learning of Character and Word Embeddings. In AAAI 2015.
+Besides the character components, there's also some researchers go deeper with strokes n-grams. See Figure \ref{chinese-word-n-gram} [@cao2018cw2vec].
+
+![Chinese Word Embeddings with N-Gram \label{chinese-word-n-gram}](images/cw2vec-learning-chinese-word-embeddings-with-stroke-n-gram-information.png)
+
+And get the sememe for the component of the Chinese characters from HowNet [@dong2003hownet]. See Figure \ref{character-and-word-embedding} [@niu2017improved]
+
+![Chinese Word with Sememe \label{character-and-word-embedding}](images/joint-learning-of-character-and-word-embeddings.png)
+
+Today, there's many Subword-Units algorithm that want to improve the performance for the language model, like Morfessor, BPE, char-trigram, character, and analysis. See Figure \ref{do-we-capture-morphology} [@vania2017characters]
+
+![From Characters to Words to in Between \label{do-we-capture-morphology}](images/from-characters-to-words-to-in-between-do-we-capture-morphology.png)
 
 
-然后再通过 subwords 来重构 word representation，进而构建整个文本的meaning representation.
+Obviously, those prior knowledge of morphological is valuable. But how can we get the morphological knowledges? Of couse we can get them from the priory researchers. But it could be better if we could induct the morphology knowledge from unsupervised machine learning alghorithm. See Figure \ref{unsupervised-morphology-induction} [@soricut2015unsupervised]
+
+![Unsupervised Morphology Induction\label{unsupervised-morphology-induction}](images/unsupervised-morphology-induction-using-word-mbeddings.png)
+
+At last, there has already a lot researchs like "implicitly incorporating morphological information into Word Embedding" [@xu2017implicitly], See Figure \ref{morphological-information-into-word-embedding}, and "Better Word Representations with Recursive Neural Networks for Morphology" [luong2013better], See Figure \ref{representations-with-morphology} [@luong2013better].
+
+![Morphological Information into Word Embedding \label{morphological-information-into-word-embedding}](images/implicitly-incorporating-morphological-information-into-word-embedding.png)
+
+![Morphological Sub Words\label{representations-with-morphology}](images/better-word-representations-with-recursive-neural-networks-for-morphology.png)
+
 
 ## 2. Morpheme
 
@@ -113,11 +130,28 @@ Each "morpheme" carries meaning - "prefix", "stem", "suffix"
 ```
 > Page 3, https://web.stanford.edu/class/linguist1/Slides/morph1-slides.pdf
 
-## Related Works
 
-1. Replace word representations from word embedding to morpheme embedding(Minh-Thang Luong et al., 2013) and get better performance in NLP tasks
-1. Solve open vocabulary(OOV) problem in NMT task(Rico Sennrich, et al., 2015)
-1. Do subword regularizatio(Taku Kudo, 2018)
+aforementioned -> a fore mentioned 
+英文词根切词
+
+俞敏洪的GRE红宝书（《GRE词汇精选》）中，会把每一个英文单词拆分成对应的词根，用来辅助记忆，如：
+为每一个重要单词都给出了精炼又贴切的记忆方法，包括词根词缀法、联想记忆法和发音记忆法等。同时又给这些重要单词配以同根词、派生词、形近词和反义词，帮助考生理解和记忆，达到举一反三的效果。
+
+```
+abandon v./n.放弃；放纵 分拆联想：a+band(乐队)+on→一个乐队在演出→放纵
+abash v.使害羞，使尴尬 分拆联想：ab+ash(灰)→中间有灰，灰头灰脸→尴尬
+abate v.减轻，减少 词根记忆：a(加强)+bate(减弱，减少)→减轻
+abbreviate v.缩短；缩写 词根记忆：ab(加强)+brev(短)+iate→缩短
+abdicate v.退位，辞职，放弃 词根记忆：ab(相反)+dic(说话，命令)+ate→不再命令→退位，辞职
+```
+> 《GRE词汇精选》
+
+中文字体偏旁：鲸、鲤、鲶 -> 鲜 -> 地三鲜
+海里能吃的东西都比较鲜
+
+朝鲜：不同的维度语义
+
+
 
 ## Morphology Ideas
 
@@ -139,18 +173,8 @@ The 3D relation information was perfectly included.
 Δ简介主题；Δ主题的重要性；Δ理清首要问题；
 Δ简介各篇（例如A.B.）文章与作者，及不同或互补之处。
 
-![](https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/00a28138c74869cfb8236a18a4dbe3a896f7a812/4-Figure2-1.png)
-> Source: [https://www.semanticscholar.org](https://www.semanticscholar.org/paper/Better-Word-Representations-with-Recursive-Neural-Luong-Socher/00a28138c74869cfb8236a18a4dbe3a896f7a812)
-
 ## Test
 
-[Pandoc](https://en.wikipedia.org/wiki/Pandoc) is a great tool for converting between different print formats. In this case pandoc will handle these conversions for us, all in one command:
-
-```
-Markdown -> Latex -> Latex Citeproc Bibliography Filter -> PDF
-```
-
-![This is the caption \label{my_figure}](images/joint-learning-of-character-and-word-embeddings.png)
 
 Non-English or Math|Frequency |Comments          
 -------------------|----------|-----------------
@@ -163,7 +187,6 @@ Table: (Table title) \label{my_table}
 
 See Table \ref{my_table} for more.
 
-See Figure \ref{my_figure} for more.
 
 
 ## Tasks
@@ -204,82 +227,11 @@ See Figure \ref{my_figure} for more.
 
 ## Acknowledgements
 
-Frist I'd like to thank Xiaojie LI because I started to think about morphology when I'm on his class: Computation and Language.
+I'd like to thank professor Xiaojie LI for I started thinking about embedding in morphology when I'm on the class Computational Linguistics that he taught.
 
-Second, I'd like to thank Tongjun LI, who is the orginazer of Wechat group "NLP Fans", so I could discuss my idea with hundreds of other members in the group.
+I'd also like to thank my friend Tongjun LI, who is the orginazer of Wechat group "NLP Fans" with hundreds of members, where I could discuss my idea over there.
 
-### 二级标题
-
-无序列表
-- item1
-- item2
-- item3
-
-aforementioned -> a fore mentioned 
-英文词根切词
-
-俞敏洪的GRE红宝书（《GRE词汇精选》）中，会把每一个英文单词拆分成对应的词根，用来辅助记忆，如：
-为每一个重要单词都给出了精炼又贴切的记忆方法，包括词根词缀法、联想记忆法和发音记忆法等。同时又给这些重要单词配以同根词、派生词、形近词和反义词，帮助考生理解和记忆，达到举一反三的效果。
-
-```
-abandon v./n.放弃；放纵 分拆联想：a+band(乐队)+on→一个乐队在演出→放纵
-abash v.使害羞，使尴尬 分拆联想：ab+ash(灰)→中间有灰，灰头灰脸→尴尬
-abate v.减轻，减少 词根记忆：a(加强)+bate(减弱，减少)→减轻
-abbreviate v.缩短；缩写 词根记忆：ab(加强)+brev(短)+iate→缩短
-abdicate v.退位，辞职，放弃 词根记忆：ab(相反)+dic(说话，命令)+ate→不再命令→退位，辞职
-```
-> 《GRE词汇精选》
-
-
-### See Also
-
-清华NLP研究：HowNet - 义原（Sememe）标注词汇语义，义原顾名思义就是原子语义，即最基本的、不宜再分割的最小语义单位
-https://zhuanlan.zhihu.com/p/32688983
-
-- [SentencePiece](https://github.com/google/sentencepiece) is a re-implementation of sub-word units, an effective way to alleviate the open vocabulary problems in neural machine translation. SentencePiece supports two segmentation algorithms, byte-pair-encoding (BPE) [Sennrich et al.] and unigram language model [Kudo.]. 
-
-- [Radu Soricut, Franz Och*, Unsupervised Morphology Induction Using Word Embeddings, NAACL 2015](http://www.aclweb.org/anthology/N15-1186)
-    > We present a language agnostic, unsupervised method for inducing morphological transformations between words.
-
-中文字体偏旁：鲸、鲤、鲶 -> 鲜 -> 地三鲜
-海里能吃的东西都比较鲜
-
-朝鲜：不同的维度语义
-
-
-## References
-
-### Papers
-
-1. Tomas Mikolov et al., Distributed Representations of Words and Phrases and their Compositionality, In NIPS 2013.
-1. Jeffrey Pennington et al., GloVe: Global Vectors for Word Representation, In ACL 2014.
-1. Piotr Bojanowski et al., Enriching Word Vectors with Subword Information, In 2017.
-1. Yang Xu, Jiawei Liu. 2017. Implicitly Incorporating Morphological Information into Word Embedding.
-1. Minh-Thang Luong, Richard Socher,  Christopher D. Manning. 2013. Better Word Representations with Recursive Neural Networks for Morphology. In CoNLL 2013.
-1. Rico Sennrich, Barry Haddow, and Alexandra Birch. 2015. Neural Machine Translation of Rare Words with Subword Units.
-1. Taku Kudo. 2018. Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates.
-1. Jon Ezeiza Alvarez, 2017, A review of word embedding and document similarity algorithms applied to academic text.
-1. Ruobing Xie et al., Lexical Sememe Prediction via Word Embeddings and Matrix Factorization, In IJCAI 2017.
-1. Yilin Niu et al., Improved Word Representation Learning with Sememes, In ACL 2017.
-1. Radu Soricut et al., Unsupervised Morphology Induction Using Word Embeddings, In NAACL 2015.
-1. Askars Salimbajevs, Using sub-word n-gram models for dealing with OOV in large vocabulary speech recognition for Latvian , In ACL 2015.
-1. Yanran Li et al., Component-Enhanced Chinese Character Embeddings. In Computer Science, 2015.
-1. Xinxiong Chen et al., Joint Learning of Character and Word Embeddings. In AAAI 2015.
-
-
-[2] Chen X, Xu L, Liu Z, et al. Joint learning of character and word embeddings[C]// International Conference on Artificial Intelligence. AAAI Press, 2015:1236-1242.
-
-[3] Sun Y, Lin L, Yang N, et al. Radical-Enhanced Chinese Character Embedding[J]. Lecture Notes in Computer Science, 2014, 8835:279-286.
-
-[4] 
-
-[5] Yu J, Jian X, Xin H, et al. Joint Embeddings of Chinese Words, Characters, and Fine-grained Subcharacter Components[C]// Conference on Empirical Methods in Natural Language Processing. 2017:286-291.
-
-[7] cw2vec: Learning Chinese Word Embeddings with Stroke n-gram Information. 2018 AAAI
-
-
-
-### See Also
+## See Also
 
 1. [Morphology: Word Structure](https://www.youtube.com/watch?v=zlkGtu035xc) (video)
 1. [Morphology: The Study of Word Structure](https://web.stanford.edu/class/linguist1/Slides/morph1-slides.pdf) (slide)
@@ -287,9 +239,14 @@ https://zhuanlan.zhihu.com/p/32688983
 1. [汉字拼义理论：心理学揭开争鸣百年的汉字之谜2](http://blog.sina.com.cn/s/blog_97658e3a010162gi.html)
 3 [汉字拼义理论：心理学揭开争鸣百年的汉字之谜](http://blog.sina.com.cn/s/blog_97658e3a010162gj.html)
 1. [morphology (morpheme & allomorph)](https://www.youtube.com/watch?v=DiQ7ai6i4lE)
-1. A review of word embedding and document similarity algorithms applied to academic text: [Paper](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Jon_Ezeiza_2017.pdf) & [Slide](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Jon_Ezeiza_2017_presentation.pdf)
+1. [A review of word embedding and document similarity algorithms applied to academic text](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Jon_Ezeiza_2017_presentation.pdf)
 1. [Morphological Recursive Neural Network (morphoRNN)](shukebeta.me/UoE-nlu/#Meaning-representations)
 1. [“后 Word Embedding ”的热点会在哪里？](http://yanran.li/peppypapers/2015/08/17/post-word-embedding.html)
 1. [论文阅读笔记 Improved Word Representation Learning with Sememes](https://www.cnblogs.com/fengyubo/p/9038190.html)
 1. [BETTER WORD REPRESENTATIONS WITH RECURSIVE NEURAL NETWORKS FOR MORPHOLOGY](https://pdfs.semanticscholar.org/cd3a/b4a3536da969297db446eaf8795fef62c8a6.pdf) (slide)
 1. [Word embeddings in 2017: Trends and future directions](http://ruder.io/word-embeddings-2017/)
+1. [HowNet - 义原（Sememe）顾名思义就是原子语义，即最基本的、不宜再分割的最小语义单位](https://zhuanlan.zhihu.com/p/32688983)
+1. [SentencePiece](https://github.com/google/sentencepiece) is a re-implementation of Subword-units, an effective way to alleviate the open vocabulary problems in neural machine translation. SentencePiece supports two segmentation algorithms, byte-pair-encoding (BPE) [Sennrich et al.] and unigram language model [Kudo.]. 
+1. [Deep contextualized word representations](https://allennlp.org/elmo)
+
+## References
