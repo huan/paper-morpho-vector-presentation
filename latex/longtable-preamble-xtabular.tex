@@ -1,0 +1,16 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Redefine longtable because it doesn't work in multicolumn
+% https://tex.stackexchange.com/a/425198/171573
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{xtab}
+\makeatletter
+\def\longtable{\@ifnextchar[\newlongtable@i \newlongtable@ii}
+\def\newlongtable@i[#1]{%
+\renewcommand{\endhead}{\ignorespaces}
+\xtabular[#1]}
+\def\newlongtable@ii{%
+\renewcommand{\endhead}{\ignorespaces}
+\xtabular}
+\def\endlongtable{\endxtabular}
+\makeatother

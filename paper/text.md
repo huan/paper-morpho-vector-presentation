@@ -107,29 +107,20 @@ At last, those prior knowledge of morphological is valuable. But how can we get 
 
 ![Unsupervised Morphology Induction\label{unsupervised-morphology-induction}](images/unsupervised-morphology-induction-using-word-mbeddings.png)
 
-## Test
-
-
-Non-English or Math|Frequency |Comments          
--------------------|----------|-----------------
-\O                 |1 in 1,000|For Swedish names 
-$\pi$              |1 in 5    |Common in math    
-\$                 |4 in 5    |Used in business  
-
-Table: (Table title) \label{my_table}
-
-
-See Table \ref{my_table} for more.
-
 ## Conclusion and Future Work
 
-提出一个比其他更好的理念与立场
-提出一个优于每一个理论与立场的部分的摘要
+Morphonology knowledge is very valuable and it could be able to help the word embedding be more informative. 
+There's already lots of word embedding research based on the morpheme, but it seems they are all very eary stage, and there stil haven't a solution for the industry like Word2Vec or GLOVE.
 
-（4） 进一步的研究课题、发展方向概况。 
-（5） 自己的见解和感想。 
+I believe this direction is a right direction to improve the performance of tradional word embedding for NLP tasks, it's worth to do more research based on the previous studies.
 
-提出几条语言简明、含义确切的意见和建议；也可以对主体部分的主要内容作出扼要的概括，并提出作者自己的见解，表明作者赞成什么，反对什么；对于篇幅较小的综述，可以不单独列出总结，仅在主体各部分内容论述完后，用几句话对全文进行高度概括。
+The future work would consider to:
+
+1. Train a Tokenizer to parse Word to Morphemes
+1. Train Morpheme Embedding on Wikipedia Dataset
+1. Use GRU to convert Morpheme Embeddings for each word to Word Embedding(Morpheme Word Embedding)
+1. Benchmark all the morpheme based word embedding algorithms
+1. Compare the results of standard NLP tasks on Morpheme Word Embedding against to other traditional word embeddings.
 
 ## Acknowledgements
 

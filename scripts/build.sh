@@ -8,6 +8,12 @@ set -e
 
 [ -d dist/ ] || mkdir dist
 
+# 乱码
+# --include-in-header latex/longtable-preamble.tex \
+
+# Not Work
+# --include-in-header latex/longtable-preamble-xtabular.tex \
+
 pandoc \
   --pdf-engine=xelatex \
   --filter=pandoc-citeproc \
@@ -18,7 +24,8 @@ pandoc \
   --bibliography=paper/citations.bib \
   --metadata-file=paper/metadata.yaml \
   \
-  -H latex/longtable-redefined-with-two-columns.tex \
+  --filter=latex/longtable-filter.py \
+  --include-in-header=latex/booktabs.tex \
   \
   -s paper/text.md \
   -o dist/paper.$1

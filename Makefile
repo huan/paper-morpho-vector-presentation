@@ -1,6 +1,6 @@
 # Makefile
 # Author: Huan LI <zixia@zixia.net> git.io/zixia
-SOURCE_GLOB=$(wildcard paper/* images/*)
+SOURCE_GLOB=$(wildcard paper/* images/* scripts/*)
 
 .PHONY: all
 all: build
@@ -29,6 +29,11 @@ dist/paper.pdf: $(SOURCE_GLOB)
 html: dist/paper.html
 dist/paper.html: $(SOURCE_GLOB)
 	./scripts/build.sh html
+
+.PHONY: tex
+tex: dist/paper.tex
+dist/paper.tex: $(SOURCE_GLOB)
+	./scripts/build.sh tex
 
 .PHONY: build
 build: pdf html

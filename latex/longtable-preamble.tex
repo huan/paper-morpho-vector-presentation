@@ -1,5 +1,10 @@
-% How to solve longtable is not in 1-column mode error?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% As suggested by egreg, xtab is another choice.
+% xtab is built on supertabular while avoiding its weaknesses.
 % https://tex.stackexchange.com/a/224096/171573
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\LTcapwidth}{\linewidth}
 \makeatletter
 \let\oldlt\longtable
 \let\endoldlt\endlongtable
