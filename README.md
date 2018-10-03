@@ -1,13 +1,17 @@
 # paper-morpheme-vector-presentation
 
-A Thought of  Morphonological Vector Representation in Linguistic
+A Mini Review of Word Embedding in Morphonology
 
 name as textmeme? meme2vec?
+
+## USAGE
+
+This project is my first paper, which the main propuse of it is to learn how to write paper for the first time. ;-D
 
 ## INSTALL
 
 ```shell
-brew install pandoc pandoc-xxx
+brew install pandoc pandoc-filter pandoc-citeproc
 npm install -g nodemon
 ```
 
@@ -15,10 +19,10 @@ npm install -g nodemon
 
 ```shell
 make clean
-make build
+make pdf
 ```
 
-The output files would be placed into `dist/` folder.
+The paper will be generated and save to `dist/paper.pdf`.
 
 ## SEE ALSO
 
