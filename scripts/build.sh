@@ -14,7 +14,7 @@ set -e
 # Not Work
 # --include-in-header latex/longtable-preamble-xtabular.tex \
 
-PAPER_FILENAME='A Mini Review for Word Embedding in Morphonology'
+PAPER_FILENAME='A Mini Review for Word Embedding in Morpho'
 
 pandoc \
   --pdf-engine=xelatex \
