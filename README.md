@@ -15,7 +15,7 @@ name as textmeme? meme2vec?
 
 ## USAGE
 
-This is a [Open Paper Project](https://github.com/zixia/paper-morpho-vector-presentation/wiki#what-is-an-open-paper-project), which means:
+This is a [Open Paper Project](https://github.com/zixia/paper-morpho-vector-presentation/wiki/Open-Paper-Project), which means:
 
 1. You can join if you are interested
 1. PR is welcome to contribute
