@@ -2,6 +2,7 @@
 # longtable not compatible with 2-column LaTeX documents #1023
 # https://github.com/jgm/pandoc/issues/1023#issuecomment-160400040
 #   - https://groups.google.com/d/msg/pandoc-discuss/RUC-tuu_qf0/h-H3RRVt1coJ
+# Issue #1
 
 import pandocfilters as pf
 
