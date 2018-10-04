@@ -1,6 +1,6 @@
 # paper-morpho-vector-presentation
 
-A Mini Review of Word Embedding in Morphonology
+A Mini Review of Word Embedding in Morpho
 
 ![Morpho Butterfly](https://zixia.github.io/paper-morpho-vector-presentation/images/morpho-logo.png)
 > picture credit: [@juditfigarolacoach](https://juditfigarolacoach.wordpress.com/2017/05/19/a-puerto/)
