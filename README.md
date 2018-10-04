@@ -15,7 +15,13 @@ name as textmeme? meme2vec?
 
 ## USAGE
 
-This project is my first paper, which the main propuse of it is to learn how to write paper for the first time. ;-D
+This is a Open-Paper Project, which means:
+
+1. You can join if you are interested
+1. PR is welcome to contribute
+1. All contribtors who's PR had been accepted, will be listed as the authors in this paper.
+
+> This project is my first paper, which the main propuse of it is to learn how to write paper for the first time. ;-D
 
 ## INSTALL
 
