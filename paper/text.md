@@ -1,5 +1,5 @@
 ---
-title: A Review of Word Embedding in Morphonology
+title: A Mini Review of Word Embedding in Morphonology
 author:
 - Huan LI (李卓桓) huan@bupt.edu.cn
 institute:
