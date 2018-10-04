@@ -3,7 +3,7 @@
 A Mini Review of Word Embedding in Morphonology
 
 ![Morpho Butterfly](https://zixia.github.io/paper-morpho-vector-presentation/images/morpho-logo.png)
-> Credit: [juditfigarolacoach.wordpress.com](https://juditfigarolacoach.wordpress.com/2017/05/19/a-puerto/)
+> Logo Credit: [juditfigarolacoach.wordpress.com](https://juditfigarolacoach.wordpress.com/2017/05/19/a-puerto/)
 
 | morpho |
 | ------ |
