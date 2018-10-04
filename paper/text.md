@@ -1,12 +1,12 @@
 ---
-title: A Mini Review of Word Embedding in Morphonology
+title: A Mini Review of Word Embedding in Morphology
 author:
 - Huan LI (李卓桓) huan@bupt.edu.cn
 institute:
 - Department of Computer Science and Technology
 - Beijing University of Post and Telecom
 abstract: |
-  The text meaning is essential for AI; Word Embedding is the primary tool today for text meaning, so the Word Embedding is very important. However, most of the Word Embedding is based on words, like Word2Vec, GLOVE. From the view of Computational Linguistics, words are ruled by syntax, and they are formed by the basic unit of the language: morpheme. A morpheme is the smallest meaningful morphological unit of a language that cannot be further divided or analyzed. In other words, morpheme can be described as the minimal units of meaning. In this paper, we believe that the morpheme could help AI understand the text meaning better, and reviewed some Word Embedding technology with Morphonology, which incorporating morphological information into Word Embedding.
+  The text meaning is essential for AI; Word Embedding is the primary tool today for text meaning, so the Word Embedding is very important. However, most of the Word Embedding is based on words, like Word2Vec, GLOVE. From the view of Computational Linguistics, words are ruled by syntax, and they are formed by the basic unit of the language: morpheme. A morpheme is the smallest meaningful morphological unit of a language that cannot be further divided or analyzed. In other words, morpheme can be described as the minimal units of meaning. In this paper, we believe that the morpheme could help AI understand the text meaning better, and reviewed some Word Embedding technology with Morphology, which incorporating morphological information into Word Embedding.
 
 date: Sep 30, 2018
 ---
@@ -17,9 +17,9 @@ Morphology is a study of words. It mainly deals with word formation, examines th
 
 A morpheme is the smallest unit of a word, which has a meaning, lexical or grammatical, and cannot be divided into smaller units. For instance, the word "unpredictable" consists of 3 morphemes -- un + predict + able. Un is a prefix, which means "not" and is used in this example to negate the adjective "predictable." The suffix able is used to form adjectives and is usually placed at the end of a verb (useable, loveable, deniable, etc.).
 
-In this paper, we will talk about the Word Embedding in Morphonology.
+In this paper, we will talk about the Word Embedding in Morphology.
 
-## 2. Morphonology
+## 2. Morphology
 
 morphemes is Re-combin(e)-able. See Table \ref{morpheme-carries-meaning} [@jill2016morphology]:
 
@@ -45,7 +45,7 @@ And it is powerful. See Table \ref{study-of-word-structure} [@penny2011linguisti
 
 Table: (Study of Word Structure) \label {study-of-word-structure}
 
-That morphonology knowledge will also help human to understand the words a lot. There has a famous book named 《GRE词汇精选》（GRE红宝书） which is known by all the Chinese students who want to pass the GRE test, and it gives a lot of morphological tricks like Table \ref{gre-book}:
+That morphology knowledge will also help human to understand the words a lot. There has a famous book named 《GRE词汇精选》（红宝书） which is known by all the Chinese students who want to pass the GRE test, and it gives a lot of morphological tricks like Table \ref{gre-book}:
 
 | Word | Morphemes / Meaning |
 | ---- | --------- |
@@ -83,9 +83,9 @@ The languages other than English, such as Chinese, Japanese, and Korea, also hav
 
 ![Chinese Character Component \label{component-enhanced-hinese-character-embeddings}](images/component-enhanced-chinese-character-embeddings.png)
 
-Besides the character components, there's also some researchers go deeper with strokes n-grams. See Figure \ref{chinese-word-n-gram} [@cao2018cw2vec].
+Besides the character components, there's also some researchers go deeper with strokes n-grams. See Figure \ref{chinese-word-strokes-n-gram} [@cao2018cw2vec].
 
-![Chinese Word Embeddings with N-Gram \label{chinese-word-n-gram}](images/cw2vec-learning-chinese-word-embeddings-with-stroke-n-gram-information.png)
+![Chinese Character Strokes with N-Gram \label{chinese-word-strokes-n-gram}](images/cw2vec-learning-chinese-word-embeddings-with-stroke-n-gram-information.png)
 
 Moreover, get the sememe for the component of the Chinese characters from HowNet [@dong2003hownet]. See Figure \ref{character-and-word-embedding} [@niu2017improved]
 
@@ -108,7 +108,7 @@ At last, that prior knowledge of morphological is valuable. However, how can we 
 
 ## Conclusion and Future Work
 
-Morphonology knowledge is, and it could be able to help the word embedding to be more informative. 
+Morphology knowledge is, and it could be able to help the word embedding to be more informative. 
 There's already lots of word embedding research based on the morpheme, but it seems they are all very early stage, and there still have not a solution for the industry like Word2Vec or GLOVE.
 
 We believe this direction is a right direction to improve the performance of traditional word embedding for NLP tasks, and it is worth to do more research based on the previous studies.
