@@ -1,5 +1,7 @@
 # paper-morpho-vector-presentation
 
+[![Open Paper Project](https://img.shields.io/badge/%20-Open%20Paper%20Project-brightgreen.svg)](https://github.com/zixia/paper-morpho-vector-presentation/wiki/Open-Paper-Project)
+
 A Mini Review of Word Embedding in Morpho
 
 ![Morpho Butterfly](https://zixia.github.io/paper-morpho-vector-presentation/images/morpho-logo.png)
