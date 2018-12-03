@@ -91,13 +91,12 @@ fasttext模型，采用cbow模型，不同之处在于cbow预测目标词，fast
 
 13《Compositional Morphology for Word Representations and Language Modelling》
 
-## AUTHOR
+## CO-AUTHORS
 
-[Huan LI](http://linkedin.com/in/zixia) \<zixia@zixia.net\>
-
-<a href="https://stackexchange.com/users/265499">
-  <img src="https://stackexchange.com/users/flair/265499.png" width="208" height="58" alt="profile for zixia on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for zixia on Stack Exchange, a network of free, community-driven Q&amp;A sites">
-</a>
+| Co-Author | GitHub | Bio & Research Direction |
+| --- | --- | --- |
+| Huan LI | @zixia | BUPT CS Ph.D. for Conversational AI |
+| Shirui WANG | @wangshirui33 | BUPT CS Ph.D. for Language Embedding |
 
 ## COPYRIGHT & LICENSE
 
