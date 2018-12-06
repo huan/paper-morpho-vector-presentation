@@ -90,6 +90,13 @@ fasttext模型，采用cbow模型，不同之处在于cbow预测目标词，fast
 以多任务目标增强了 mnih 和 hinton (2007年) 的对数双线性模型 (LBL)，除了预测下一个单词外，增加了预测其语素标签的任务。如：city的morphological tags：N，NOM，SG，FEM。其中FEM包含了它是一个名词，且是单数的含义，每个单词tag都由多个tags组成。
 
 13《Compositional Morphology for Word Representations and Language Modelling》
+源自LBL模型，以该单词的词素信息与单词的结合作为词向量输入模型预测下一个单词。如novou: novou+novo+u
+
+14.《cw2vec: Learning Chinese Word Embeddings with Stroke n-gram Information》
+本篇论文采用笔画信息作为特征，由于每个字符包含很多的笔画，类似于一个英文单词包含很多的拉丁字母，在这个基础之上，提出了笔画的n-gram特征。这个思想来源于2016年facebook提出的论文（Enriching Word Vectors with Subword Information），cw2vec可以称之为中文版本的fasttext，利用笔画的n-gram代skip-gram中的词语进行训练。
+
+15.《Radical Enhanced Chinese Word Embedding》
+是基于CBOW来进行的改进，通过Radical（部首）来增强word embedding，称之为RECWE模型。为了能够充分的挖掘内部语义信息，还对radical进行了转换处理：如单人旁-->人
 
 ## CO-AUTHORS
 
