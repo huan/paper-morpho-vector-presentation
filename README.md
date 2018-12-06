@@ -4,7 +4,7 @@
 
 A Mini Review of Word Embedding in Morpho
 
-![Morpho Butterfly](https://zixia.github.io/paper-morpho-vector-presentation/images/morpho-logo.png)
+![Morpho Butterfly](https://huan.github.io/paper-morpho-vector-presentation/images/morpho-logo.png)
 > picture credit: [@juditfigarolacoach](https://juditfigarolacoach.wordpress.com/2017/05/19/a-puerto/)
 
 | morpho |
@@ -17,7 +17,7 @@ name as textmeme? meme2vec?
 
 ## USAGE
 
-This is a [Open Paper Project](https://github.com/zixia/paper-morpho-vector-presentation/wiki/Open-Paper-Project), which means:
+This is a [Open Paper Project](https://github.com/huan/paper-morpho-vector-presentation/wiki/Open-Paper-Project), which means:
 
 1. You can join if you are interested
 1. PR is welcome to contribute
