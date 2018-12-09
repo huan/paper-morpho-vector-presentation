@@ -1,6 +1,6 @@
 # paper-morpho-vector-presentation
 
-[![Open Paper Project](https://img.shields.io/badge/%20-Open%20Paper%20Project-brightgreen.svg)](https://github.com/BUPT/open-paper-project)
+[![Open Paper Project](https://img.shields.io/badge/📝-Open%20Paper%20Project-brightgreen.svg)](https://github.com/BUPT/open-paper-project)
 
 A Mini Review of Word Embedding in Morpho
 
