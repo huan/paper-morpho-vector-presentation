@@ -112,6 +112,8 @@ fasttext模型，采用cbow模型，不同之处在于cbow预测目标词，fast
 16. [Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation](https://arxiv.org/pdf/1609.08144.pdf), Yonghui Wu, Mike Schuster, et. al., 2016.
 To improve handling of rare words, we divide words into a limited set of common sub-word units (“wordpieces”) for both input and output. This method provides a good balance between the flexibility of “character”-delimited models and the efficiency of “word”-delimited models, naturally handles translation of rare words, and ultimately improves the overall accuracy of the system.
 
+17. [Character and Subword-Based word Representation for Neural Language Modeling prediction. Matthieu Labeau, Alexandre Allauzen. ACL 2017](http://aclweb.org/anthology/W17-41)
+
 ## CO-AUTHORS
 
 | Co-Author | GitHub | Bio & Research Direction |
