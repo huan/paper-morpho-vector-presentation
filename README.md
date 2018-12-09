@@ -41,6 +41,17 @@ make pdf
 
 The paper will be generated and save to `dist/A Mini Review for Word Embedding in Morpho.pdf`.
 
+## History
+
+### master
+
+- TBW
+
+### v0.0.1 Oct 2018
+
+- [A_Mini_Review_for_Word_Embedding_in_Morpho.pdf](https://github.com/huan/paper-morpho-vector-presentation/releases/download/v0.0.1/A_Mini_Review_for_Word_Embedding_in_Morpho.pdf)
+
+
 ## SEE ALSO
 
 - [How to make a scientific looking PDF from markdown (with bibliography)](https://gist.github.com/maxogden/97190db73ac19fc6c1d9beee1a6e4fc8)
