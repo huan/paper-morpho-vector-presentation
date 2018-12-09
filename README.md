@@ -41,7 +41,7 @@ make pdf
 
 The paper will be generated and save to `dist/A Mini Review for Word Embedding in Morpho.pdf`.
 
-## History
+## HISTORY
 
 ### master
 
