@@ -17,7 +17,7 @@ name as textmeme? meme2vec?
 
 ## USAGE
 
-This is a [Open Paper Project](https://github.com/huan/paper-morpho-vector-presentation/wiki/Open-Paper-Project), which means:
+This is a [Open Paper Project](https://github.com/BUPT/open-paper-project), which means:
 
 1. You can join if you are interested
 1. PR is welcome to contribute
@@ -108,6 +108,9 @@ fasttext模型，采用cbow模型，不同之处在于cbow预测目标词，fast
 
 15.《Radical Enhanced Chinese Word Embedding》
 是基于CBOW来进行的改进，通过Radical（部首）来增强word embedding，称之为RECWE模型。为了能够充分的挖掘内部语义信息，还对radical进行了转换处理：如单人旁-->人
+
+16. [Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation](https://arxiv.org/pdf/1609.08144.pdf), Yonghui Wu, Mike Schuster, et. al., 2016.
+To improve handling of rare words, we divide words into a limited set of common sub-word units (“wordpieces”) for both input and output. This method provides a good balance between the flexibility of “character”-delimited models and the efficiency of “word”-delimited models, naturally handles translation of rare words, and ultimately improves the overall accuracy of the system.
 
 ## CO-AUTHORS
 
