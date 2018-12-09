@@ -49,7 +49,7 @@ The paper will be generated and save to `dist/A Mini Review for Word Embedding i
 
 ### v0.0.1 Oct 2018
 
-- [A_Mini_Review_for_Word_Embedding_in_Morpho.pdf](https://github.com/huan/paper-morpho-vector-presentation/releases/download/v0.0.1/A_Mini_Review_for_Word_Embedding_in_Morpho.pdf)
+- [A Mini Review for Word Embeddingin Morpho.pdf](https://github.com/huan/paper-morpho-vector-presentation/releases/download/v0.0.1/A_Mini_Review_for_Word_Embedding_in_Morpho.pdf)
 
 
 ## SEE ALSO
