@@ -125,4 +125,6 @@ To improve handling of rare words, we divide words into a limited set of common 
 
 * Code & Docs © 2016-2018 Huan LI \<zixia@zixia.net\>
 * Code released under the Apache-2.0 License
-* Docs released under Creative Commons
+* Docs released under Creative Commons CC-BY 4.0
+* Even if enclosed inside a notebook or served as part of the interactive article.
+
